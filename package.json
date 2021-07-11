@@ -1,10 +1,10 @@
 {
-  "name": "ContactKeeper",
+  "name": "contactkeeper",
   "version": "1.0.0",
   "description": "Contact Manager App",
   "main": "server.js",
   "engines": {
-    "node": "14.x"
+    "node": "12.21.0"
   },
   "scripts": {
     "start": "node server.js",
