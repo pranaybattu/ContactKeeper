@@ -9,7 +9,7 @@ app.use(express.json({extended:false}))
 
 connectDB();
 
-app.get('/', (req,res) => res.json({msg:'Welcome to ContacKeeper API...'}) )
+
 
 app.use('/api/users', require('./routes/users'))
 app.use('/api/auth', require('./routes/auth'))

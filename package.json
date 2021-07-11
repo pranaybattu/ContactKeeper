@@ -4,7 +4,9 @@
   "description": "Contact Manager App",
   "main": "server.js",
   "engines": {
-    "node": "12.21.0"
+    "node": "12.21.0",
+    "npm": "7.16.0"
+
   },
   "scripts": {
     "start": "node server.js",
