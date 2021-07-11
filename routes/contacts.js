@@ -12,7 +12,7 @@ const Contact = require('../models/Contact')
 router.get('/',auth,async (req,res) => {
     try {
         const contacts = await Contact.find({user: req.user.id}).sort({date: -1})
-        res.json({contacts}) 
+        res.json(contacts) 
     } catch (err) {
         console.error(err.message)
         res.status(500).send('Server error')
@@ -44,8 +44,7 @@ async (req,res) => {
         })
 
         const contact = await newContact.save()
-
-        res.json({contact})
+        res.json(contact)
 
     } catch (err) {
         console.error(err.message)
@@ -83,9 +82,13 @@ router.put('/:id', auth ,async (req,res) => {
         contact = await Contact.findByIdAndUpdate(
             req.params.id, 
             {$set : contactFields},
-            {$new: true})
-        
-        res.json({contact})
+            {$new: true}
+        )
+        const updatedContact = await Contact.findById(req.params.id)
+        console.log(updatedContact)
+        res.json(
+            updatedContact
+        )
     }
     catch (err) {
         console.error(err.message)
@@ -121,7 +124,5 @@ router.delete('/:id',auth, async (req,res) => {
 
     
 })
-
-
 
 module.exports =router

@@ -31,7 +31,7 @@ const ContactForm = () => {
 
     const onChange = e => setContact({...contact, [e.target.name]: e.target.value })
 
-    const onSubmit = e => {
+    const onSubmit = async e => {
         e.preventDefault()
         if(current === null) {
             addContact(contact)
