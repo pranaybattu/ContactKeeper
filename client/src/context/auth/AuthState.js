@@ -44,6 +44,7 @@ const AuthState = props => {
 
   // Register User
   const register = async formData => {
+    console.log('res mil gaya: ')
     const config = {
       headers: {
         'Content-Type': 'application/json'
@@ -52,7 +53,6 @@ const AuthState = props => {
 
     try {
       const res = await axios.post('/api/users', formData, config);
-
       dispatch({
         type: REGISTER_SUCCESS,
         payload: res.data
@@ -62,7 +62,7 @@ const AuthState = props => {
     } catch (err) {
       dispatch({
         type: REGISTER_FAIL,
-        payload: err.response.data.msg
+        payload: err.response.data.error
       });
     }
   };

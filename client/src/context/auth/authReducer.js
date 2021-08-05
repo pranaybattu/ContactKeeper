@@ -29,6 +29,10 @@ const authReducer = (state, action) => {
           loading: false
         };
       case REGISTER_FAIL:
+        return {
+          ...state,
+          error: action.payload
+        };
       case AUTH_ERROR:
       case LOGIN_FAIL:
         return {

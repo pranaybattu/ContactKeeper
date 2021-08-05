@@ -39,6 +39,9 @@ const Register = (props) => {
         else if (password !== password2) {
           setAlert('Passwords do not match', 'danger');
         } 
+        // else if(password.length <= 6) {
+        //     setAlert('Password must be at least 6 characters long','danger');
+        // }
         else {
             console.log('User Registered')
           register({
